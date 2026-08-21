@@ -25,14 +25,6 @@ a{color:inherit;}
 .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter);}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 
-/* INTRO TRANSITION */
-#transitionOverlay{position:fixed;inset:0;z-index:600;background:#000;display:none;overflow:hidden;}
-#transitionOverlay.active{display:block;}
-#transitionOverlay .t-bg{position:absolute;inset:-5%;background-size:cover;background-position:center;filter:blur(35px) brightness(.5) saturate(1.15);transform:scale(1.15);opacity:0;transition:opacity .3s ease;}
-#transitionOverlay .t-bg.show{opacity:1;}
-#transitionOverlay img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .2s ease,transform .4s ease;transform:scale(1.03);filter:drop-shadow(0 20px 50px rgba(0,0,0,.55));}
-#transitionOverlay img.show{opacity:1;transform:scale(1);}
-#transitionOverlay.fadeOut{opacity:0;transition:opacity 1.5s ease;pointer-events:none;}
 
 .scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--blue));z-index:101;box-shadow:0 0 10px rgba(var(--accent-rgb),.6);transition:width .08s linear;}
 .grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:300;opacity:var(--grain-opacity);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");will-change:transform;mix-blend-mode:overlay;}
@@ -380,9 +372,6 @@ footer .close-note{margin-top:56px;font-family:'IBM Plex Mono',monospace;font-si
 
 <!-- AUDIO (replace src with your file) -->
 <audio id="bgAudio" loop preload="auto"><source src="audio/bg_ngan.mp3" type="audio/mpeg"></audio>
-
-<!-- INTRO TRANSITION -->
-<div id="transitionOverlay"><div class="t-bg" id="transitionBg"></div><img src="" alt="" id="transitionImg"></div>
 
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="grain" id="grain"></div>
@@ -853,32 +842,6 @@ function closeExperience(){document.getElementById('expOverlay').classList.remov
   document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){if(lightbox.classList.contains('show'))closeLightbox();else if(toast.classList.contains('show'))toast.classList.remove('show');else{closeProject();closeExperience();}if(mobileMenu.classList.contains('open')){mobileMenu.classList.remove('open');hamburger.classList.remove('open');document.body.style.overflow='';}}});
 
   onScroll();
-})();
-
-/* ============================================================
-   INTRO TRANSITION — flashes project photos before the portfolio
-   ============================================================ */
-(function(){
-'use strict';
-if(sessionStorage.getItem('introPlayed')){return;}
-const transitionOverlay=document.getElementById('transitionOverlay');
-const transitionImg=document.getElementById('transitionImg');
-const transitionBg=document.getElementById('transitionBg');
-const imgs=[IMG_ferntree_oocl,IMG_datbike_bmc,IMG_cvi_beforeafter,IMG_scfi_forecast,IMG_vinamilk_fcf_a2,IMG_pikpik_bom,IMG_pikpik_competitor,IMG_cec_thienam_1,IMG_cec_ecoday_1,IMG_cec_hong_1,IMG_cec_christmas_1,IMG_cec_tiaam_1,IMG_cec_sonca_1,IMG_cec_longbien_1,'images/profile.jpg'];
-transitionOverlay.classList.add('active');
-document.body.style.overflow='hidden';
-let i=0;
-function showNext(){
-  if(i>=imgs.length){
-    transitionOverlay.classList.add('fadeOut');
-    setTimeout(()=>{transitionOverlay.style.display='none';document.body.style.overflow='';sessionStorage.setItem('introPlayed','1');},1500);
-    return;
-  }
-  transitionImg.classList.remove('show');
-  transitionBg.classList.remove('show');
-  setTimeout(()=>{transitionImg.src=imgs[i];transitionBg.style.backgroundImage=`url(${imgs[i]})`;transitionImg.classList.add('show');transitionBg.classList.add('show');i++;const delay=i>=imgs.length?1400:250;setTimeout(showNext,delay);},100);
-}
-showNext();
 })();
 </script>
 </body>
