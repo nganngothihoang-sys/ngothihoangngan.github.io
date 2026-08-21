@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>CV — Ngo Thi Hoang Ngan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="light"]{--bg:#FFFFFF;--bg-alt:#F4F4F6;--card:#FAFAFA;--ink:#000000;--ink-soft:#1A1A1A;--accent:#E60028;--accent-rgb:230,0,40;--line:rgba(0,0,84,.14);--muted:#555555;--shadow:0 10px 40px rgba(0,0,0,.08);}
+:root[data-theme="dark"]{--bg:#0A0A14;--bg-alt:#11111E;--card:#16161F;--ink:#F0F0F5;--ink-soft:#B8B8C5;--accent:#FF2A5C;--accent-rgb:255,42,92;--line:rgba(255,255,255,.09);--muted:#8C8C99;--shadow:0 14px 50px rgba(0,0,0,.55);}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;transition:background .4s ease,color .4s ease;-webkit-font-smoothing:antialiased;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(20px,5vw,48px);max-width:960px;margin:0 auto;gap:16px;}
+.brand{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:.08em;display:flex;align-items:center;gap:10px;color:var(--ink);}
+.brand .dot{width:9px;height:9px;flex-shrink:0;background:var(--accent);transform:rotate(45deg);display:inline-block;}
+.back-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;transition:color .2s,border-color .2s;}
+.back-link:hover{color:var(--accent);border-color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--ink);cursor:pointer;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s ease,color .3s ease;}
+.theme-toggle:hover{transform:rotate(180deg);border-color:var(--accent);color:var(--accent);}
+.theme-toggle svg{width:17px;height:17px;}
+[data-theme="light"] .theme-toggle .moon{display:none;}
+[data-theme="dark"] .theme-toggle .sun{display:none;}
+
+main{padding:56px 0 80px;}
+.section-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.9rem,4.2vw,2.7rem);letter-spacing:-.015em;margin:10px 0 8px;}
+.sub{color:var(--muted);font-size:.98rem;max-width:640px;margin:0 0 28px;}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;}
+.cta-btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;border:1px solid var(--accent);color:var(--accent);padding:12px 18px;text-decoration:none;letter-spacing:.03em;transition:background .15s ease,color .15s ease;display:inline-flex;align-items:center;gap:8px;background:none;cursor:pointer;}
+.cta-btn:hover{background:var(--accent);color:#fff;}
+.cta-btn.solid{background:var(--accent);color:#fff;}
+.cta-btn.solid:hover{background:var(--accent);opacity:.88;}
+.cta-btn.ghost{border-color:var(--line);color:var(--ink-soft);}
+.cta-btn.ghost:hover{border-color:var(--accent);color:var(--accent);background:none;}
+
+.pdf-frame-wrap{border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);overflow:hidden;}
+.pdf-frame-wrap iframe{width:100%;height:82vh;min-height:520px;display:block;border:none;background:#525659;}
+.pdf-fallback{padding:48px 24px;text-align:center;color:var(--ink-soft);}
+.pdf-fallback a{color:var(--accent);font-weight:600;text-decoration:underline;}
+.note{margin-top:18px;font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+
+footer{border-top:1px solid var(--line);padding:28px 0;margin-top:40px;}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span><span>NGAN NGO — LOGISTICS &amp; SCM</span></div>
+    <div class="nav-right">
+      <a href="index.html" class="back-link">← Back to portfolio</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <span class="section-tag mono">CV / Cargo Manifest Attachment</span>
+    <h1>Curriculum Vitae</h1>
+    <p class="sub">Ngo Thi Hoang Ngan — Logistics &amp; Supply Chain Management / Finance, RMIT Vietnam. View the CV below, or download the PDF directly.</p>
+    <div class="cta-row">
+      <a href="Ngo_Thi_Hoang_Ngan_CV_ATS.pdf" download class="cta-btn solid">Download CV (PDF) ↓</a>
+      <a href="Ngo_Thi_Hoang_Ngan_CV_ATS.pdf" target="_blank" rel="noopener" class="cta-btn ghost">Open in new tab ↗</a>
+    </div>
+    <div class="pdf-frame-wrap">
+      <iframe src="Ngo_Thi_Hoang_Ngan_CV_ATS.pdf" title="Ngo Thi Hoang Ngan — CV">
+        <div class="pdf-fallback">Your browser can't display the PDF inline. <a href="Ngo_Thi_Hoang_Ngan_CV_ATS.pdf" download>Download the CV</a> instead.</div>
+      </iframe>
+    </div>
+    <p class="note">If the preview doesn't load on your device (common on mobile browsers), use the "Open in new tab" or "Download" buttons above.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Ngo Thi Hoang Ngan · RMIT Vietnam</span>
+    <span>Hanoi · 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var toggle=document.getElementById('themeToggle');
+  try{
+    var stored=localStorage.getItem('ngan-theme');
+    if(stored)root.setAttribute('data-theme',stored);
+  }catch(e){}
+  toggle.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('ngan-theme',next);}catch(e){}
+  });
+})();
+</script>
+
+</body>
+</html>
