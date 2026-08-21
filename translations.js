@@ -173,6 +173,7 @@ I18N.en = {
     "toast.goalDefault":"a graduate role","toast.slotDefault":"a soon-open slot",
     "toast.messageNote":" Your message: “{message}”",
     "toast.closing":" Ngan will reach out within 24 hours.",
+    "booking.sending":"Sending…","toast.errorMsg":"Something went wrong sending your request — please email me directly at nganngothihoang@gmail.com instead.",
 
     "langSwitcher.label":"Language"
   },
@@ -359,6 +360,7 @@ I18N.vi = {
     "toast.goalDefault":"một vị trí mới tốt nghiệp","toast.slotDefault":"một khung giờ sẽ mở sớm",
     "toast.messageNote":" Lời nhắn của bạn: “{message}”",
     "toast.closing":" Ngân sẽ liên hệ lại trong vòng 24 giờ.",
+    "booking.sending":"Đang gửi…","toast.errorMsg":"Đã có lỗi khi gửi yêu cầu của bạn — vui lòng gửi email trực tiếp cho tôi tại nganngothihoang@gmail.com.",
     "langSwitcher.label":"Ngôn ngữ"
   },
 
@@ -544,6 +546,7 @@ I18N.ko = {
     "toast.goalDefault":"졸업 예정자 포지션","toast.slotDefault":"곧 열리는 시간대",
     "toast.messageNote":" 메시지: “{message}”",
     "toast.closing":" Ngan이 24시간 내에 연락드립니다.",
+    "booking.sending":"전송 중…","toast.errorMsg":"요청을 보내는 중 문제가 발생했습니다 — nganngothihoang@gmail.com으로 직접 이메일을 보내주세요.",
     "langSwitcher.label":"언어"
   },
 
@@ -729,6 +732,7 @@ I18N.ja = {
     "toast.goalDefault":"新卒ポジション","toast.slotDefault":"まもなく開く時間枠",
     "toast.messageNote":" メッセージ: 「{message}」",
     "toast.closing":" Nganが24時間以内にご連絡します。",
+    "booking.sending":"送信中…","toast.errorMsg":"リクエストの送信中に問題が発生しました — nganngothihoang@gmail.com まで直接メールをお送りください。",
     "langSwitcher.label":"言語"
   },
 
@@ -914,6 +918,7 @@ I18N.zh = {
     "toast.goalDefault":"一个应届生岗位","toast.slotDefault":"即将开放的时间段",
     "toast.messageNote":" 您的留言：“{message}”",
     "toast.closing":" Ngan 会在 24 小时内回复。",
+    "booking.sending":"发送中…","toast.errorMsg":"发送请求时出现问题——请直接发送邮件至 nganngothihoang@gmail.com。",
     "langSwitcher.label":"语言"
   },
 
